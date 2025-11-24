@@ -2,7 +2,7 @@
 
 > **Production-ready Terraform modules and examples for the CoderCo community**
 
-This repository contains reusable Terraform modules, real-world examples, and starter templates following [CoderCo Engineering Standards](https://github.com/YourUsername/coderco-engineering-standards).
+This repository contains reusable Terraform modules, real-world examples, and starter templates following [CoderCo Engineering Standards](https://github.com/CoderCo-Learning/engineering-standards).
 
 ## What's Here
 
