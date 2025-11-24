@@ -11,7 +11,7 @@ This repository contains reusable Terraform modules, real-world examples, and st
 - **Templates** - Starter templates for common patterns
 - **Best Practices** - Best practices for Terraform code
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repo
