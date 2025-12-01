@@ -29,8 +29,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore lock files (uncomment if you want to commit them)
-# .terraform.lock.hcl
+# Ignore lock files
+.terraform.lock.hcl
 
 # IDE files
 .vscode/
