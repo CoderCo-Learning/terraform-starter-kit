@@ -1,3 +1,5 @@
+data "aws_region" "current" {}
+
 resource "aws_ecs_task_definition" "this" {
   family                   = var.task_family_name
   requires_compatibilities = ["FARGATE"]
@@ -27,6 +29,16 @@ resource "aws_ecs_task_definition" "this" {
           value = value
         }
       ]
+
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = "/ecs/${var.task_family_name}"
+          awslogs-region        = data.aws_region.current.name
+          awslogs-stream-prefix = "ecs"
+          awslogs-create-group  = "true"
+        }
+      }
     }
   ])
 }
