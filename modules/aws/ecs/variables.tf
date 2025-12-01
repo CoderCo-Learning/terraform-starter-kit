@@ -17,7 +17,12 @@ variable "subnets" {
 variable "target_group_id" {
   description = "Target Group ID for ECS (required if enable_load_balancer is true)"
   type        = string
-  # No default - will fail if enable_load_balancer is true but this is not provided
+  default     = null
+  
+  validation {
+    condition     = var.enable_load_balancer ? var.target_group_id != null : true
+    error_message = "target_group_id is required when enable_load_balancer is true."
+  }
 }
 
 variable "cluster_name" {
