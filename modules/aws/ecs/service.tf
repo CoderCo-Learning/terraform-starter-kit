@@ -1,7 +1,7 @@
 resource "aws_ecs_service" "this" {
   name                               = var.service_name
-  launch_type                        = var.launch_type
-  platform_version                   = "LATEST"
+  launch_type                        = "FARGATE"
+  platform_version                   = "1.4.0"
   cluster                            = aws_ecs_cluster.this.id
   task_definition                    = aws_ecs_task_definition.this.id
   scheduling_strategy                = "REPLICA"

@@ -37,11 +37,6 @@ variable "service_name" {
   default     = "service"
 }
 
-variable "launch_type" {
-  description = "Launch type for the ECS service"
-  type        = string
-}
-
 variable "task_desired_count" {
   description = "Desired count for ECS service tasks"
   type        = number
