@@ -12,41 +12,6 @@ This module creates an AWS ECS (Elastic Container Service) cluster with Fargate 
 - Load balancer support (optional)
 - Comprehensive tagging via provider default_tags
 
-## Usage
-
-```hcl
-module "ecs" {
-  source = "./modules/aws/ecs"
-
-  # Required variables
-  cluster_name         = "your-cluster-name"
-  task_desired_count   = 1  # Number of tasks to run
-  assign_public_ip     = true
-  security_groups      = ["sg-xxxxxxxxxxxxx"]
-  subnets              = ["subnet-xxxxxxxxxxxxx", "subnet-yyyyyyyyyyyyy"]
-  container_image_url  = "your-account.dkr.ecr.region.amazonaws.com/your-image:tag"
-  container_port       = 8080
-  host_port            = 8080
-
-  # Optional variables
-  service_name         = "your-service-name"  # Defaults to "service"
-  container_cpu_units  = 256                 # Defaults to 256
-  container_memory     = 512                 # Defaults to 512
-  task_family_name     = "your-task-family"  # Defaults to "task-family"
-
-  environment_variables = {
-    KEY = "value"
-  }
-
-  # Load balancer configuration (optional)
-  enable_load_balancer = false
-  # target_group_id = "arn:aws:elasticloadbalancing:region:account:targetgroup/name/id" # Required if enable_load_balancer is true
-
-  # Task role (optional)
-  # task_role_arn = "arn:aws:iam::account:role/your-task-role" # If not provided, a new role will be created
-}
-```
-
 ## Requirements
 
 | Name | Version |
@@ -90,7 +55,7 @@ module "ecs" {
 | ecs_service_arn | ARN of the ECS service |
 | ecs_task_definition_arn | ARN of the ECS task definition |
 | ecs_task_execution_role_arn | ARN of the ECS task execution role |
-| ecs_task_role_arn | ARN of the ECS task role (if created) |
+| ecs_task_role_arn | ARN of the ECS task role |
 
 ## Examples
 
