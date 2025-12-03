@@ -17,13 +17,7 @@ This module creates an AWS ECS (Elastic Container Service) cluster with Fargate 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.12.2 |
-| aws | >= 5.95.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| aws | >= 5.95.0 |
+| aws | >= 6.24.0 |
 
 ## Inputs
 

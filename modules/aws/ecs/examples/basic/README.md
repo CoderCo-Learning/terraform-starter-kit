@@ -20,7 +20,7 @@ terraform apply
 
 ## Requirements
 
-- AWS Provider >= 5.95.0
+- AWS Provider >= 6.24.0
 - Terraform >= 1.12.2
 - Valid AWS credentials configured
 - Existing VPC with subnets and security groups
