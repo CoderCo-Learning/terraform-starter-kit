@@ -18,7 +18,7 @@ variable "target_group_id" {
   description = "Target Group ID for ECS (required if enable_load_balancer is true)"
   type        = string
   default     = null
-  
+
   validation {
     condition     = var.enable_load_balancer ? var.target_group_id != null : true
     error_message = "target_group_id is required when enable_load_balancer is true."
@@ -60,21 +60,33 @@ variable "container_image_url" {
 variable "container_cpu_units" {
   description = "Total CPU units for ECS task definition"
   type        = number
+  default     = 256
 }
 
 variable "container_memory" {
   description = "Total memory (in MiB) for ECS task definition"
   type        = number
+  default     = 512
 }
 
 variable "container_port" {
   description = "Container port for ECS container"
   type        = number
+
+  validation {
+    condition     = var.container_port > 0 && var.container_port < 65536
+    error_message = "Container port must be between 1 and 65535."
+  }
 }
 
 variable "host_port" {
   description = "Host port for ECS container"
   type        = number
+
+  validation {
+    condition     = var.host_port > 0 && var.host_port < 65536
+    error_message = "Host port must be between 1 and 65535."
+  }
 }
 
 variable "environment_variables" {
