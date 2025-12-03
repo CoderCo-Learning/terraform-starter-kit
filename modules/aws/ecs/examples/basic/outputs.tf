@@ -3,9 +3,9 @@ output "cluster_id" {
   value       = module.ecs.ecs_cluster_id
 }
 
-output "service_id" {
-  description = "ECS Service ID"
-  value       = module.ecs.ecs_service_id
+output "service_arn" {
+  description = "ECS Service ARN"
+  value       = module.ecs.ecs_service_arn
 }
 
 output "task_definition_arn" {

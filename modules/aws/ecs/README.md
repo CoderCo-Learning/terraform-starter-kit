@@ -51,14 +51,14 @@ module "ecs" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 1.5.0 |
-| aws | >= 5.0 |
+| terraform | >= 1.12.2 |
+| aws | >= 5.95.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 5.0 |
+| aws | >= 5.95.0 |
 
 ## Inputs
 
@@ -87,10 +87,7 @@ module "ecs" {
 |------|-------------|
 | ecs_cluster_id | ID of the ECS cluster |
 | ecs_cluster_arn | ARN of the ECS cluster |
-| ecs_cluster_name | Name of the ECS cluster |
-| ecs_service_id | ID of the ECS service |
-| ecs_service_name | Name of the ECS service |
-| ecs_task_definition_id | ID of the ECS task definition |
+| ecs_service_arn | ARN of the ECS service |
 | ecs_task_definition_arn | ARN of the ECS task definition |
 | ecs_task_execution_role_arn | ARN of the ECS task execution role |
 | ecs_task_role_arn | ARN of the ECS task role (if created) |
