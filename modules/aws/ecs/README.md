@@ -57,6 +57,7 @@ See [examples/](./examples/) directory for complete examples.
 
 ## Notes
 
+- **Security groups are required** - You must provide at least one security group ID for the ECS service to function
 - All resources are automatically tagged with `ManagedBy` and `Module` tags via provider default_tags
 - The module creates IAM roles for task execution and task role (unless an existing task_role_arn is provided)
 - CloudWatch Logs are automatically configured for container logging
