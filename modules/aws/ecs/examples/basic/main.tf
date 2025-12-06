@@ -17,20 +17,20 @@ module "ecs" {
   source = "github.com/CoderCo-Learning/terraform-starter-kit//modules/aws/ecs"
 
   # Required variables
-  cluster_name         = "my-ecs-cluster"
-  task_desired_count   = 1
-  assign_public_ip     = true
-  security_groups      = ["sg-1234567890abcdef0"]
-  subnets              = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"]
-  container_image_url  = "123456789012.dkr.ecr.eu-west-2.amazonaws.com/my-app:latest"
-  container_port       = 1234
-  host_port            = 1234
+  cluster_name        = "my-ecs-cluster"
+  task_desired_count  = 1
+  assign_public_ip    = true
+  security_groups     = ["sg-1234567890abcdef0"]
+  subnets             = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"]
+  container_image_url = "123456789012.dkr.ecr.eu-west-2.amazonaws.com/my-app:latest"
+  container_port      = 1234
+  host_port           = 1234
 
   # Optional variables
-  service_name         = "my-ecs-service"  # Defaults to "service"
-  container_cpu_units  = 256              # Optional, defaults to 256
-  container_memory     = 512              # Optional, defaults to 512
-  task_family_name     = "my-app-task"      # Defaults to "task-family"
+  service_name        = "my-ecs-service" # Defaults to "service"
+  container_cpu_units = 256              # Optional, defaults to 256
+  container_memory    = 512              # Optional, defaults to 512
+  task_family_name    = "my-app-task"    # Defaults to "task-family"
 
   environment_variables = {
     ENV  = "development"
