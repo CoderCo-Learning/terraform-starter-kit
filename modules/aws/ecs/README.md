@@ -1,4 +1,4 @@
-# ECS Module
+# ECS Module - V1.0.0
 
 This module creates an AWS ECS (Elastic Container Service) cluster with Fargate launch type, including service, task definition, and required IAM roles.
 
