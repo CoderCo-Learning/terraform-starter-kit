@@ -13,8 +13,6 @@ resource "aws_ecs_task_definition" "main" {
     {
       name  = "container"
       image = var.container_image_url
-      #   cpu       = var.container_cpu_units
-      #   memory    = var.container_memory
       essential = true
 
       portMappings = [
