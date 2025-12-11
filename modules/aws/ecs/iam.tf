@@ -45,7 +45,7 @@ resource "aws_iam_role_policy" "ecs_execution_logs_policy" {
 }
 
 resource "aws_iam_role" "ecs_task_role" {
-  count = var.task_role_arn == null ? 1 : 0
+  count = var.use_custom_task_role ? 0 : 1
   name  = "${var.cluster_name}-ecs-task-role"
 
   assume_role_policy = jsonencode({

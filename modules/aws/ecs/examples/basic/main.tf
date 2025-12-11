@@ -41,7 +41,9 @@ module "ecs" {
   # target_group_id = "arn:aws:elasticloadbalancing:..." # Required if enable_load_balancer is true
 
   # Task role (optional)
-  # task_role_arn = "arn:aws:iam::123456789012:role/my-task-role" # If not provided, a new role will be created
+  # To use your own task role, set use_custom_task_role = true and provide task_role_arn. Otherwise, a new role will be created automatically by the module.
+  # use_custom_task_role = true
+  # task_role_arn = "arn:aws:iam::123456789012:role/my-task-role"
 
 }
 

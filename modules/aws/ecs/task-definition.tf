@@ -3,7 +3,7 @@ data "aws_region" "current" {}
 resource "aws_ecs_task_definition" "main" {
   family                   = var.task_family_name
   requires_compatibilities = ["FARGATE"]
-  task_role_arn            = var.task_role_arn != null ? var.task_role_arn : aws_iam_role.ecs_task_role[0].arn
+  task_role_arn            = var.use_custom_task_role ? var.task_role_arn : aws_iam_role.ecs_task_role[0].arn
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   cpu                      = var.container_cpu_units
