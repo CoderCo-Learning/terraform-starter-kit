@@ -100,3 +100,9 @@ variable "task_role_arn" {
   type        = string
   default     = null
 }
+
+variable "use_custom_task_role" {
+  description = "Set to true to use your own task role (via task_role_arn). When false, a default task role will be created"
+  type        = bool
+  default     = false
+}
