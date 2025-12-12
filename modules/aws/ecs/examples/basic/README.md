@@ -34,6 +34,9 @@ See the main module README for all available variables.
 After applying, you can access:
 
 - `ecs_cluster_id` - The ECS cluster ID
-- `ecs_service_id` - The ECS service ID
+- `ecs_cluster_arn` - The ECS cluster ARN
+- `ecs_service_arn` - The ECS service ARN
 - `ecs_task_definition_arn` - The task definition ARN
+- `ecs_task_execution_role_arn` - The ECS task execution role ARN
+- `ecs_task_role_arn` - The ECS task role ARN
 

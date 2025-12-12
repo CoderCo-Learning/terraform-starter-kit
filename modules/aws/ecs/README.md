@@ -38,7 +38,8 @@ This module creates an AWS ECS (Elastic Container Service) cluster with Fargate 
 | target_group_id | Target Group ID for ECS (required if enable_load_balancer is true) | `string` | `null` | no |
 | task_family_name | Task family for ECS task definition | `string` | `"task-family"` | no |
 | environment_variables | Environment variables for the container (map of key-value pairs) | `map(string)` | `{}` | no |
-| task_role_arn | ARN of an existing IAM role to use as the task role (optional - if not provided, a new role will be created) | `string` | `null` | no |
+| task_role_arn | ARN of an existing IAM role to use as the task role (required if use_custom_task_role is true) | `string` | `null` | no |
+| use_custom_task_role | Set to true to use your own task role (via task_role_arn). When false, a new task role will be created | `bool` | `false` | no |
 
 ## Outputs
 
@@ -59,7 +60,7 @@ See [examples/](./examples/) directory for complete examples.
 
 - **Security groups are required** - You must provide at least one security group ID for the ECS service to function
 - All resources are automatically tagged with `ManagedBy` and `Module` tags via provider default_tags
-- The module creates IAM roles for task execution and task role (unless an existing task_role_arn is provided)
+- The module creates IAM roles for task execution and task role. (task role will not be created if `use_custom_task_role` is set to `true` and `task_role_arn` is provided)
 - CloudWatch Logs are automatically configured for container logging
 - The service uses Fargate launch type with awsvpc network mode
 - Task definition revisions are ignored in lifecycle to prevent constant updates
@@ -70,7 +71,7 @@ See [examples/](./examples/) directory for complete examples.
 - `aws_ecs_service` - ECS service
 - `aws_ecs_task_definition` - Task definition
 - `aws_iam_role` - Task execution role
-- `aws_iam_role` - Task role (if not provided)
+- `aws_iam_role` - Task role (if `use_custom_task_role` is `false`)
 - `aws_iam_role_policy_attachment` - Execution policy attachment
 - `aws_iam_role_policy` - Logs policy
 
