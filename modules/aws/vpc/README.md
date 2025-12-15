@@ -69,14 +69,16 @@ Enable with:
 enable_flow_logs = true
 ```
 
-##  Outputs
+## Outputs
 
 | Name | Description |
 |------|-------------|
 | `vpc_id` | ID of the VPC |
 | `public_subnet_ids` | IDs of public subnets |
 | `private_subnet_ids` | IDs of private subnets |
-
+| `nat_gateway_id` | ID of the NAT Gateway (if enabled) |
+| `flow_log_id` | ID of the VPC Flow Log (if enabled) |
+| `flow_log_log_group_name` | CloudWatch Log Group name for VPC Flow Logs |
 
 ##  Example Usage
 
