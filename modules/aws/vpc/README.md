@@ -19,8 +19,6 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 - Centralised tagging via module inputs  
 - Validated with AWS provider v6+  
 
----
-
 ##  Requirements
 
 | Name       | Version      |
@@ -28,7 +26,6 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 | terraform  | >= 1.5.0     |
 | aws        | >= 5.0.0     |
 
----
 
 ##  Inputs
 
@@ -44,7 +41,7 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 | `flow_log_traffic_type` | Flow log traffic type (ALL, ACCEPT, REJECT) | string | `"ALL"` | no |
 | `flow_log_retention_days` | Flow log retention in days | number | `14` | no |
 | `tags` | Additional tags applied to all resources | map(string) | `{}` | no |
----
+
 ## NAT Gateway (Optional)
 
 The NAT Gateway provides outbound internet access for resources in private subnets.
@@ -58,7 +55,6 @@ Enable with:
 ```hcl
 enable_nat_gateway = true
 ```
----
 
 ## VPC Flow Logs (Optional)
 
@@ -83,13 +79,11 @@ enable_flow_logs = true
 | `public_subnet_ids` | IDs of public subnets |
 | `private_subnet_ids` | IDs of private subnets |
 
----
 
 ##  Example Usage
 
 See full examples in the `examples/` directory.
 
----
 ## Notes
 
 - Subnets are created per Availability Zone in the order provided via the `azs` variable
@@ -101,7 +95,7 @@ See full examples in the `examples/` directory.
 - VPC Flow Logs capture metadata only and do not inspect packet payloads
 - Flow Logs are delivered to CloudWatch Logs with a configurable retention period
 - All resources are tagged using the provided `name` and `tags` inputs
----
+
 ## Resources Created
 
 - aws_vpc – VPC
