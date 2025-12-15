@@ -4,8 +4,6 @@ This module creates a production-ready Virtual Private Cloud (VPC) on AWS, inclu
 
 The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wider cloud infrastructure architectures.
 
----
-
 ##  Features
 
 - VPC creation with configurable CIDR block  
