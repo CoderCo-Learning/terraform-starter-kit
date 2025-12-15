@@ -167,7 +167,7 @@ resource "aws_iam_role" "flow_logs" {
 
 resource "aws_iam_role_policy" "flow_logs" {
   count = var.enable_flow_logs ? 1 : 0
-  role = aws_iam_role.flow_logs[0].id
+  role  = aws_iam_role.flow_logs[0].id
 
   policy = jsonencode({
     Version = "2012-10-17"

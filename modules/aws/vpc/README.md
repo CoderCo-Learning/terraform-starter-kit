@@ -1,4 +1,4 @@
-# VPC Module
+# VPC Module - V1.0.0
 
 This module creates a production-ready Virtual Private Cloud (VPC) on AWS, including public and private subnets, route tables, an Internet Gateway, and an optional NAT Gateway for outbound access from private subnets.
 
@@ -6,7 +6,7 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 
 ---
 
-## 🚀 Features
+##  Features
 
 - VPC creation with configurable CIDR block  
 - Public subnets (one per AZ)  
@@ -89,24 +89,27 @@ enable_flow_logs = true
 
 See full examples in the `examples/` directory.
 
-Basic example:
+---
+## Notes
 
-```hcl
-module "vpc" {
-  source = "../../modules/aws/vpc"
+- Subnets are created per Availability Zone in the order provided via the `azs` variable
+- Public subnets are configured with `map_public_ip_on_launch = true`
+- Private subnets do not have outbound internet access unless the NAT Gateway is enabled
+- When enabled, a single NAT Gateway is created in the first public subnet to minimise cost
+- NAT Gateway is disabled by default to avoid unexpected AWS charges
+- VPC Flow Logs are disabled by default to avoid unnecessary logging costs
+- VPC Flow Logs capture metadata only and do not inspect packet payloads
+- Flow Logs are delivered to CloudWatch Logs with a configurable retention period
+- All resources are tagged using the provided `name` and `tags` inputs
+---
+## Resources Created
 
-  name = "example-vpc"
-
-  vpc_cidr_block       = "10.0.0.0/16"
-  azs                  = ["eu-west-2a", "eu-west-2b"]
-  public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
-  private_subnet_cidrs = ["10.0.3.0/24", "10.0.4.0/24"]
-
-  enable_nat_gateway = false
-  enable_flow_logs   = false
-
-  tags = {
-    Environment = "dev"
-    Project     = "example"
-  }
-}
+- aws_vpc – VPC
+- aws_subnet – Public and private subnets
+- aws_internet_gateway – Internet Gateway
+- aws_route_table – Public and private route tables
+- aws_route – Internet and NAT routes
+- aws_nat_gateway – NAT Gateway (optional)
+- aws_flow_log – VPC Flow Logs (optional)
+- aws_cloudwatch_log_group – Flow Logs log group (optional)
+- aws_iam_role – Flow Logs IAM role (optional)
