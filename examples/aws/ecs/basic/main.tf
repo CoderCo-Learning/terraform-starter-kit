@@ -23,8 +23,8 @@ module "ecs" {
   security_groups     = ["sg-1234567890abcdef0"] # Replace with your security group ID
   subnets             = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"] # Replace with your subnet IDs
   container_image_url = "123456789012.dkr.ecr.eu-west-2.amazonaws.com/my-app:latest" # Replace with your container image URL
-  container_port      = 1234
-  host_port           = 1234
+  container_port      = 1234 # Replace with your container port
+  host_port           = 1234 # Replace with your host port
 
   # Optional variables
   service_name        = "my-ecs-service" # Defaults to "service"
