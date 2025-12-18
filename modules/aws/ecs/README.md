@@ -1,4 +1,13 @@
-# ECS Module - V1.0.0
+// ...existing code...
+- **Load Balancer not included** - If you would like to utilise the load balancer feature, you will need to create this resource yourself, and provide the target group to the module input
+// ...existing code...
+- **Load balancer not included** — This module does not create a load balancer or its target group. If you wish to utilise a load‑balanced service, create the load balancer and target group outside the module, set enable_load_balancer = true and pass the target_group_id input. The module will not manage listener rules or the load balancer's security groups, so create those separately as required.
+// ...existing code...
+```// filepath: /home/juned/devops/CoderCo/terraform-starter-kit/modules/aws/ecs/README.md
+// ...existing code...
+- **Load Balancer not included** - If you would like to utilise the load balancer feature, you will need to create this resource yourself, and provide the target group to the module input
+// ...existing code...
+- **Load balancer not included** — This module does not create a load balancer or its target group. If you wish to utilise a load‑balanced service, create the load balancer and target group outside the module, set enable_load_balancer = true and pass the target_group_id input. The module will not manage listener rules or the load balancer's security groups, so create those separately as required.# ECS Module - V1.0.0
 
 This module creates an AWS ECS (Elastic Container Service) cluster with Fargate launch type, including service, task definition, and required IAM roles.
 
@@ -54,11 +63,12 @@ This module creates an AWS ECS (Elastic Container Service) cluster with Fargate 
 
 ## Examples
 
-See [examples/](./examples/) directory for complete examples.
+See [examples/](examples/) directory for complete examples.
 
 ## Notes
 
 - **Security groups are required** - You must provide at least one security group ID for the ECS service to function
+- **Load balancer not included** – If you wish to use the load balancer feature, you must create the load balancer and target group yourself, and provide the target group to the module input.
 - All resources are automatically tagged with `ManagedBy` and `Module` tags via provider default_tags
 - The module creates IAM roles for task execution and task role. (task role will not be created if `use_custom_task_role` is set to `true` and `task_role_arn` is provided)
 - CloudWatch Logs are automatically configured for container logging
