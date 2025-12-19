@@ -1,4 +1,4 @@
-# Basic ECS Example
+# Basic ECS Example - V1.0.0
 
 This example demonstrates a basic ECS setup with Fargate.
 
