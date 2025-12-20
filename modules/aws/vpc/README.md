@@ -39,7 +39,6 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 | `enable_flow_logs` | Enable VPC Flow Logs | bool | `false` | no |
 | `flow_log_traffic_type` | Traffic type for flow logs (`ALL`, `ACCEPT`, `REJECT`) | string | `"ALL"` | no |
 | `flow_log_retention_days` | Retention period (days) for VPC Flow Logs | number | `14` | no |
-| `tags` | Additional tags applied to all resources | map(string) | `{}` | no |
 
 ## NAT Gateway (Optional)
 
@@ -101,12 +100,24 @@ See full examples in the `examples/` directory.
 
 ## Resources Created
 
-- aws_vpc – VPC
-- aws_subnet – Public and private subnets
-- aws_internet_gateway – Internet Gateway
-- aws_route_table – Public and private route tables
-- aws_route – Internet and NAT routes
-- aws_nat_gateway – NAT Gateway (optional)
-- aws_flow_log – VPC Flow Logs (optional)
-- aws_cloudwatch_log_group – Flow Logs log group (optional)
-- aws_iam_role – Flow Logs IAM role (optional)
+This module may create the following AWS resources depending on configuration:
+
+### Core Networking
+- `aws_vpc` – VPC
+- `aws_subnet` – Public subnets (one per AZ)
+- `aws_subnet` – Private subnets (one per AZ, when enabled)
+- `aws_internet_gateway` – Internet Gateway
+- `aws_route_table` – Public route table
+- `aws_route_table_association` – Public subnet associations
+
+### Optional Private Networking
+- `aws_route_table` – Private route table (when private subnets are enabled)
+- `aws_route` – NAT Gateway route (when NAT is enabled)
+- `aws_nat_gateway` – NAT Gateway
+- `aws_eip` – Elastic IP for NAT Gateway
+
+### Optional Observability
+- `aws_flow_log` – VPC Flow Logs
+- `aws_cloudwatch_log_group` – Flow Logs log group
+- `aws_iam_role` – IAM role for Flow Logs
+- `aws_iam_role_policy` – IAM policy for Flow Logs
