@@ -11,7 +11,7 @@ func TestVpcBasicExample(t *testing.T) {
 	t.Parallel()
 
 	opts := &terraform.Options{
-		TerraformDir: "../../examples/vpc-basic",
+		TerraformDir: "../../examples/aws/vpc",
 	}
 
 	defer terraform.Destroy(t, opts)
