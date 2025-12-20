@@ -45,6 +45,7 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 The NAT Gateway provides outbound internet access for resources in private subnets.
 
 - Disabled by default to avoid unexpected costs
+- Requires `private_subnet_cidrs` to be provided
 - When enabled, a single NAT Gateway is created in the first public subnet
 - When disabled, private subnets will not have outbound internet access
 

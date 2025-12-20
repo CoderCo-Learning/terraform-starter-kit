@@ -25,18 +25,42 @@ variable "public_subnet_cidrs" {
 
 variable "private_subnet_cidrs" {
   type        = list(string)
+  default     = []
   description = "CIDR blocks for private subnets"
 
   validation {
-    condition     = length(var.private_subnet_cidrs) == length(var.azs)
-    error_message = "private_subnet_cidrs must match the number of availability zones."
+    condition = (
+      var.create_private_subnets == false ||
+      length(var.private_subnet_cidrs) == length(var.azs)
+    )
+    error_message = "When create_private_subnets is true, private_subnet_cidrs must match the number of availability zones."
+  }
+
+  validation {
+    condition = (
+      var.create_private_subnets == true ||
+      length(var.private_subnet_cidrs) == 0
+    )
+    error_message = "private_subnet_cidrs must be empty when create_private_subnets is false."
   }
 }
-
-variable "enable_nat_gateway" {
+variable "create_private_subnets" {
   type        = bool
   default     = true
-  description = "Whether to create a NAT gateway for private subnets"
+  description = "Whether to create private subnets"
+}
+variable "enable_nat_gateway" {
+  type        = bool
+  default     = false
+  description = "Enable NAT Gateway for private subnets"
+
+  validation {
+    condition = (
+      var.enable_nat_gateway == false ||
+      var.create_private_subnets == true
+    )
+    error_message = "NAT Gateway can only be enabled when private subnets are created."
+  }
 }
 
 variable "name" {
