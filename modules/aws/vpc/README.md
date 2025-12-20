@@ -25,19 +25,20 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 | aws        | >= 5.0.0     |
 
 
-##  Inputs
+## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
 | `name` | Base name used for all VPC resources | string | n/a | yes |
 | `vpc_cidr_block` | CIDR block for the VPC | string | n/a | yes |
 | `azs` | List of availability zones | list(string) | n/a | yes |
-| `public_subnet_cidrs` | CIDRs for public subnets | list(string) | n/a | yes |
-| `private_subnet_cidrs` | CIDRs for private subnets | list(string) | n/a | yes |
-| `enable_nat_gateway` | Enable NAT Gateway for private subnets | bool | false | no |
-| `enable_flow_logs` | Enable VPC Flow Logs | bool | false | no |
-| `flow_log_traffic_type` | Flow log traffic type (ALL, ACCEPT, REJECT) | string | `"ALL"` | no |
-| `flow_log_retention_days` | Flow log retention in days | number | `14` | no |
+| `public_subnet_cidrs` | CIDR blocks for public subnets (one per AZ) | list(string) | n/a | yes |
+| `create_private_subnets` | Whether to create private subnets | bool | `true` | no |
+| `private_subnet_cidrs` | CIDR blocks for private subnets (one per AZ when enabled) | list(string) | `[]` | no |
+| `enable_nat_gateway` | Enable NAT Gateway for private subnets | bool | `false` | no |
+| `enable_flow_logs` | Enable VPC Flow Logs | bool | `false` | no |
+| `flow_log_traffic_type` | Traffic type for flow logs (`ALL`, `ACCEPT`, `REJECT`) | string | `"ALL"` | no |
+| `flow_log_retention_days` | Retention period (days) for VPC Flow Logs | number | `14` | no |
 | `tags` | Additional tags applied to all resources | map(string) | `{}` | no |
 
 ## NAT Gateway (Optional)
@@ -45,7 +46,7 @@ The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wid
 The NAT Gateway provides outbound internet access for resources in private subnets.
 
 - Disabled by default to avoid unexpected costs
-- Requires `private_subnet_cidrs` to be provided
+- NAT Gateway can only be enabled when private subnets are created
 - When enabled, a single NAT Gateway is created in the first public subnet
 - When disabled, private subnets will not have outbound internet access
 
@@ -96,6 +97,7 @@ See full examples in the `examples/` directory.
 - VPC Flow Logs capture metadata only and do not inspect packet payloads
 - Flow Logs are delivered to CloudWatch Logs with a configurable retention period
 - All resources are tagged using the provided `name` and `tags` inputs
+- Automated integration tests are provided using Terratest
 
 ## Resources Created
 
