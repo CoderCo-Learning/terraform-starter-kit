@@ -1,21 +1,11 @@
-locals {
-  common_tags = merge(
-    var.tags,
-    {
-      ManagedBy = "Terraform"
-      Module    = "vpc"
-    }
-  )
-}
-
 resource "aws_vpc" "this" {
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = true
   enable_dns_support   = true
 
-  tags = merge(local.common_tags, {
-    Name = "${var.name}-vpc"
-  })
+  tags = {
+    Name = var.name
+  }
 }
 
 resource "aws_subnet" "public" {
@@ -26,9 +16,9 @@ resource "aws_subnet" "public" {
   availability_zone       = var.azs[count.index]
   map_public_ip_on_launch = true
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-public-${var.azs[count.index]}"
-  })
+  }
 }
 
 resource "aws_subnet" "private" {
@@ -38,26 +28,26 @@ resource "aws_subnet" "private" {
   cidr_block        = var.private_subnet_cidrs[count.index]
   availability_zone = var.azs[count.index]
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-private-${var.azs[count.index]}"
-  })
+  }
 }
 
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-igw"
-  })
+  }
 }
 
 resource "aws_eip" "nat" {
   count  = var.enable_nat_gateway ? 1 : 0
   domain = "vpc"
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-nat-eip"
-  })
+  }
 }
 
 resource "aws_nat_gateway" "this" {
@@ -67,17 +57,17 @@ resource "aws_nat_gateway" "this" {
 
   depends_on = [aws_internet_gateway.this]
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-nat"
-  })
+  }
 }
 
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.this.id
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-public-rt"
-  })
+  }
 }
 
 resource "aws_route" "public_internet_access" {
@@ -96,9 +86,9 @@ resource "aws_route_table" "private" {
   count  = var.create_private_subnets ? 1 : 0
   vpc_id = aws_vpc.this.id
 
-  tags = merge(local.common_tags, {
+  tags = {
     Name = "${var.name}-private-rt"
-  })
+  }
 }
 
 resource "aws_route" "private_nat_gateway" {
@@ -130,8 +120,6 @@ resource "aws_iam_role" "flow_logs" {
       }
     ]
   })
-
-  tags = local.common_tags
 }
 
 resource "aws_iam_role_policy" "flow_logs" {
@@ -164,8 +152,6 @@ resource "aws_cloudwatch_log_group" "flow_logs" {
 
   name              = "/aws/vpc/${var.name}/flow-logs"
   retention_in_days = var.flow_log_retention_days
-
-  tags = local.common_tags
 }
 
 resource "aws_flow_log" "this" {
@@ -176,6 +162,4 @@ resource "aws_flow_log" "this" {
   log_destination_type = "cloud-watch-logs"
   log_destination      = aws_cloudwatch_log_group.flow_logs[0].arn
   iam_role_arn         = aws_iam_role.flow_logs[0].arn
-
-  tags = local.common_tags
 }

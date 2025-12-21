@@ -4,6 +4,10 @@ This module creates a production-ready Virtual Private Cloud (VPC) on AWS, inclu
 
 The module follows AWS best practices and is suitable for ECS, EKS, EC2, and wider cloud infrastructure architectures.
 
+> **Note:** By default, public subnets and an Internet Gateway are created.
+> Private subnets are optional and only created when explicitly enabled.
+> Optional components such as the NAT Gateway and VPC Flow Logs are disabled by default.
+
 ##  Features
 
 - VPC creation with configurable CIDR block  
