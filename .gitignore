@@ -43,3 +43,6 @@ terraform.rc
 
 # OS files
 Thumbs.db
+
+# terraform lock
+.terraform.lock.hcl
