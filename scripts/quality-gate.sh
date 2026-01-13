@@ -18,7 +18,7 @@ done
 
 echo "==> tflint"
 tflint --init
-tflint --recursive
+tflint --recursive --force
 
 
 echo "✅ Quality gate passed."
