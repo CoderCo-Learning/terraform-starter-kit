@@ -1,3 +1,15 @@
+terraform {
+  required_version = ">= 1.2.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.15.0"
+    }
+  }
+}
+
+
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -18,10 +30,10 @@ data "aws_subnets" "default" {
 module "ec2" {
   source = "../../../../modules/aws/ec2"
 
-  instance_name       = "terratest-ec2"
-  instance_type       = "t3.micro"
-  ami_id              = data.aws_ami.amazon_linux.id
-  subnet_id           = data.aws_subnets.default.ids[0]
-  security_group_ids  = []
-  key_name            = null
+  instance_name      = "terratest-ec2"
+  instance_type      = "t3.micro"
+  ami_id             = data.aws_ami.amazon_linux.id
+  subnet_id          = data.aws_subnets.default.ids[0]
+  security_group_ids = []
+  key_name           = null
 }
