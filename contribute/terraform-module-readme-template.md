@@ -1,4 +1,4 @@
-# Terraform Module README Templates
+# 'Terraform Module' README Templates
 
 <br>
 
@@ -60,7 +60,7 @@ For previous versions of this module, see [previous-versions/](../previous-versi
 
 <br>
 
-## Module Example README Template
+## 'Module Example' README Template
 
 ```markdown
 # Example Name - V1.0.0

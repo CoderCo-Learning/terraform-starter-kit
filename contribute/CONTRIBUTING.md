@@ -111,20 +111,22 @@ modules/aws/
 │   ├── main.tf
 │   └── ...
 └── previous-versions/
-    └── your-module-v1.0/  # Previous stable version
-        ├── README.md
-        ├── main.tf
-        └── ...
+    └── your-module/
+        └── v1.0/
+            ├── README.md
+            ├── main.tf
+            └── ...
 
 examples/aws/
 ├── your-module/           # Current version example
 │   ├── main.tf
 │   └── outputs.tf
 └── previous-versions/
-    └── your-module-v1.0/  # Example for previous version
-        ├── main.tf
-        ├── outputs.tf
-        └── README.md
+    └── your-module/
+        └── v1.0/
+            ├── main.tf
+            ├── outputs.tf
+            └── README.md
 ```
 
 ### README.md
