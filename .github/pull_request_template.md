@@ -4,6 +4,13 @@
 ## Context / Motivation
 <!-- Why is this change needed? What problem does it solve? -->
 
+## Changes
+<!-- List the key changes introduced in this PR -->
+- 
+- 
+- 
+
+
 ## Type of Change
 <!-- Check all that apply -->
 - [ ] Terraform module
@@ -24,10 +31,11 @@ Closes #
 - [ ] examples validated
 - [ ] tflint
 - [ ] terratest (if applicable)
+- [ ] tested manually
 - [ ] not applicable (explain below)
 
 ## Evidence / Notes
-<!-- Commands run, output, or anything reviewers should know -->
+<!-- Commands run, output, or screenshots or reviewer notes -->
 
 ## Checklist
 - [ ] PR title is clear and descriptive
