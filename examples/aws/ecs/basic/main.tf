@@ -14,17 +14,18 @@ provider "aws" {
 }
 
 module "ecs" {
-  source = "git::https://github.com/CoderCo-Learning/terraform-starter-kit//modules/aws/ecs"
+  source = "../../../../modules/aws/ecs"
+  # source = "git::https://github.com/CoderCo-Learning/terraform-starter-kit//modules/aws/ecs"
 
   # Required variables
   cluster_name        = "my-ecs-cluster"
   task_desired_count  = 1
   assign_public_ip    = true
-  security_groups     = ["sg-1234567890abcdef0"] # Replace with your security group ID
-  subnets             = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"] # Replace with your subnet IDs
+  security_groups     = ["sg-1234567890abcdef0"]                                     # Replace with your security group ID
+  subnets             = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"]     # Replace with your subnet IDs
   container_image_url = "123456789012.dkr.ecr.eu-west-2.amazonaws.com/my-app:latest" # Replace with your container image URL
-  container_port      = 1234 # Replace with your container port
-  host_port           = 1234 # Replace with your host port
+  container_port      = 1234                                                         # Replace with your container port
+  host_port           = 1234                                                         # Replace with your host port
 
   # Optional variables
   service_name        = "my-ecs-service" # Defaults to "service"
@@ -33,7 +34,7 @@ module "ecs" {
   task_family_name    = "my-app-task"    # Defaults to "task-family"
 
   environment_variables = {
-    ENV  = "development" # Replace with your environment variables (if needed)
+    ENV = "development" # Replace with your environment variables (if needed)
   }
 
   # Load balancer configuration (optional)

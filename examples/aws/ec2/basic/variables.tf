@@ -30,11 +30,11 @@ variable "security_group_ids" {
   default     = ["sg-0123456789abcdef0"]
 }
 
-variable "region" {
-  description = "AWS region where resources will be created"
-  type        = string
-  default     = "eu-west-2"
-}
+# variable "region" {
+#   description = "AWS region where resources will be created"
+#   type        = string
+#   default     = "eu-west-2"
+# }
 
 variable "key_name" {
   type        = string
