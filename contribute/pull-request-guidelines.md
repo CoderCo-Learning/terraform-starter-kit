@@ -20,40 +20,42 @@
 Use this format for all PRs:
 
 ```markdown
-# Title: feat: Add S3 bucket module
-(The title should match or reference the issue name)
+## Summary
+<!-- Briefly describe what this PR changes and why -->
 
-## Description
-Brief description of what this PR does.
+## Context / Motivation
+<!-- Why is this change needed? What problem does it solve? -->
 
-## Changes
-- List of specific changes made
-- Another change
-- One more change
-
-## Why
-Explain the reasoning behind these changes.
-
-## Testing
-How did you test this?
-- [ ] Tested locally
-- [ ] Added unit tests
-- [ ] Tested in real environment
-- [ ] Tested edge cases
-
-## Screenshots (if applicable)
-Add screenshots or terminal output.
+## Type of Change
+<!-- Check all that apply -->
+- [ ] Terraform module
+- [ ] Example update
+- [ ] Bug fix
+- [ ] Refactor
+- [ ] Documentation
+- [ ] CI / Tooling
 
 ## Related Issues
-Closes #123
-Related to #456
+<!-- Use "Closes #<issue>" to auto-close -->
+Closes #
+
+## Testing
+<!-- Check what was performed -->
+- [ ] terraform fmt
+- [ ] terraform validate
+- [ ] examples validated
+- [ ] tflint
+- [ ] terratest (if applicable)
+- [ ] not applicable (explain below)
+
+## Evidence / Notes
+<!-- Commands run, output, or anything reviewers should know -->
 
 ## Checklist
-- [ ] Code follows style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated
-- [ ] Tests added/updated
-- [ ] No breaking changes (or documented if present)
+- [ ] PR title is clear and descriptive
+- [ ] Code follows module conventions
+- [ ] Inputs and outputs are documented
+- [ ] No secrets or sensitive data included
 ```
 
 ## Review Process
@@ -68,35 +70,6 @@ Pull requests go to the `dev` branch first, then to `main` for production. A mai
 - Respond to feedback promptly
 - Test thoroughly before submitting
 - Update documentation in the same PR
-
-## What Makes a Good PR
-
-### Clear Title & Description
-- Explains **what** changed
-- Explains **why** it changed
-- Includes context for reviewers
-
-### Single Responsibility
-- One feature/fix per PR
-- Related changes grouped together
-- No unrelated modifications
-
-### Well-Structured Code
-- Clean, readable code
-- Follows project conventions
-- Includes comments where needed
-- No commented-out code
-- No debugging statements
-
-### Comprehensive Testing
-- Tests included
-- Edge cases covered
-- Manual testing documented
-
-### Updated Documentation
-- README updated if needed
-- Code comments added
-- Examples provided
 
 ## Responding to Review Feedback
 

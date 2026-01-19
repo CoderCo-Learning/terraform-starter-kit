@@ -27,40 +27,12 @@ Thank you for your interest in contributing to the CoderCo Terraform Starter Kit
 
 ## Ways to Contribute
 
-### Documentation
-- Improve README files in modules or examples
-- Add comments to complex Terraform code
-- Create tutorials or guides
-- Fix typos and clarify confusing sections
-
-### New Modules
-- Create reusable modules for common AWS patterns
-- Follow the existing [Module Structure](#module-structure)
-- Include complete variable documentation
-- Add working examples
-
-### New Examples
-- Add examples that demonstrate module usage
-- Create examples for different use cases (production, dev, testing)
-- Document each example thoroughly
-- Test examples before submitting
-
-### Testing
-- Add Terratest tests for modules
-- Improve test coverage
-- Test examples in real AWS environments
-- Document testing procedures
-
-### Bug Fixes
-- Report issues with clear reproduction steps
-- Submit PRs with fixes
-- Include tests that verify the fix
-
-### Improvements
-- Optimise existing modules
-- Add features or configurations
-- Improve code readability
-- Enhance security best practices
+- **Documentation** - Improve guides and docs
+- **New Modules** - Create reusable infrastructure components
+- **New Examples** - Share practical use cases
+- **Testing** - Add Terratest coverage
+- **Bug Fixes** - Report and fix issues
+- **Improvements** - Enhance existing features
 
 ## Development Setup
 
@@ -189,23 +161,6 @@ For Terraform code standards, naming conventions, best practices, and formatting
 
 For a complete pre-submission checklist and PR guidelines, please refer to [pull-request-guidelines.md](./pull-request-guidelines.md).
 
-## Common Issues
-
-### Terraform State Management
-- Don't commit `.tfstate` files
-- Use remote state in real projects
-- Examples should use local state
-
-### Sensitive Data
-- Never commit AWS keys or secrets
-- Use variables for sensitive values
-- Use `.gitignore` to exclude `.tfvars`
-
-### AWS Provider Configuration
-- Don't hardcode regions or credentials
-- Use variables for provider configuration
-- Assume users will configure AWS CLI
-
 ## Getting Help
 
 - **Issues**: Search existing or create a new one
@@ -222,7 +177,3 @@ For a complete pre-submission checklist and PR guidelines, please refer to [pull
 ## License
 
 By contributing, you agree that your contributions will be licensed under the same license as the project.
-
----
-
-Thank you for contributing to make Terraform more accessible!
