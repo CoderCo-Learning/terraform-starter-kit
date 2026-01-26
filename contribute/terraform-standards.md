@@ -281,19 +281,20 @@ resource "aws_iam_role" "role" { }
 ```
 
 ### Always Add Tags
+
+Use provider `default_tags` for consistency across all resources:
+
 ```hcl
-resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr_block
-  
-  tags = merge(
-    var.tags,
-    {
-      Name        = "${var.project_name}-vpc"
-      Environment = var.environment
+# In provider.tf
+provider "aws" {
+  default_tags {
+    tags = {
       ManagedBy   = "Terraform"
+      Module    = "CoderCo community module - xxx"
     }
-  )
+  }
 }
+
 ```
 
 ### Use Dynamic Blocks Wisely

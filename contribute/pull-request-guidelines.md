@@ -11,7 +11,7 @@
 - [ ] Examples work and are tested
 - [ ] No sensitive data in code or examples (no AWS keys, secrets, or credentials)
 - [ ] Commit messages are clear and descriptive
-- [ ] Branch is up to date with main
+- [ ] Branch is up to date with dev/main (depending on where you are pushing to)
 - [ ] No merge conflicts
 - [ ] Self-review completed
 
