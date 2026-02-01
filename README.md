@@ -12,13 +12,19 @@ This repository follows **CoderCo Engineering Standards** and is intended for bo
 
 ---
 
-## 🧭 Glossary & Quick Access
+## Getting Started
 
-Key terms, patterns, and shortcuts to help you navigate the repository quickly.
+### How to Use These Modules
+
+1. Select the module you need
+2. Reference it in your Terraform configuration
+3. Configure via variables
+4. Test in dev or staging
+5. Deploy with confidence 😌
 
 ---
 
-## 📦 Available Modules & Examples
+## Available Modules & Examples
 
 ### AWS Modules
 
@@ -45,24 +51,12 @@ cd terraform-starter-kit
 # Navigate to an example
 cd examples/aws/...
 
-# Initialize and plan
+# Initialise and plan
 terraform init
 terraform plan
 ```
 
-## 🚀 Getting Started
-
-### How to Use These Modules
-
-1. Select the module you need
-2. Reference it in your Terraform configuration
-3. Configure via variables
-4. Test in dev or staging
-5. Deploy with confidence 😌
-
----
-
-## 🗂️ Repository Structure
+## Repository Structure
 
 All modules follow a consistent structure to ensure readability, scalability, and maintainability:
 ```
@@ -77,13 +71,13 @@ modules/aws/<module-name>/
         ├── main.tf
         └── README.md
 ```
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome and encouraged.
 
 ### Before You Start
 
-- Refer to `CONTRIBUTING.md`
+- Refer to [Contributing to Terraform Starter Kits](https://github.com/CoderCo-Learning/terraform-starter-kit/blob/dev/contribute/README.md)
 - Follow branching, naming, and pull request rules
 - Start with documentation, examples, or small improvements if you are new
 
@@ -91,8 +85,8 @@ Contributions are welcome and encouraged.
 
 All contributions must align with:
 
-- `Terraform_Standards.md` – Coding and design principles
-- `Raise_PR.md` – Pull request expectations and checks
+- [Terraform Standards](https://github.com/CoderCo-Learning/terraform-starter-kit/blob/dev/contribute/terraform-standards.md) – Coding and design principles
+- [Pull Requests](https://github.com/CoderCo-Learning/terraform-starter-kit/pulls) – Pull request expectations and checks
 
 ---
 
@@ -101,4 +95,4 @@ All contributions must align with:
 - Found a bug?
 - Have an improvement idea?
 
-Open an **Issue** or submit a **Pull Request** — just don’t freestyle, we have standards for a reason 😌
+Open an **Issue** or submit a **Pull Request** — just don’t freestyle, we have standards for a reason 
