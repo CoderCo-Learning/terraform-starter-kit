@@ -4,7 +4,7 @@
 
 ---
 
-## 📘 Overview
+## Overview
 
 A curated collection of reusable, production-grade Terraform modules, real-world examples, and starter templates designed to accelerate AWS infrastructure builds while enforcing security, consistency, and best practices.
 
@@ -20,7 +20,7 @@ This repository follows **CoderCo Engineering Standards** and is intended for bo
 2. Reference it in your Terraform configuration
 3. Configure via variables
 4. Test in dev or staging
-5. Deploy with confidence 😌
+5. Deploy with confidence 
 
 ---
 
@@ -41,7 +41,7 @@ Each module includes:
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -90,7 +90,7 @@ All contributions must align with:
 
 ---
 
-## 🛠️ Support & Feedback
+## Support & Feedback
 
 - Found a bug?
 - Have an improvement idea?
