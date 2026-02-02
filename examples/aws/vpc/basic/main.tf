@@ -12,7 +12,7 @@ provider "aws" {
   region = "eu-west-2"
 }
 module "vpc" {
-  source              = "../../../modules/aws/vpc"
+  source              = "../../../../modules/aws/vpc"
   name                = "example-vpc"
   vpc_cidr_block      = "10.0.0.0/16"
   azs                 = ["eu-west-2a", "eu-west-2b"]
