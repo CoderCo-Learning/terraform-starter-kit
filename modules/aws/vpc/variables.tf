@@ -68,11 +68,6 @@ variable "name" {
   description = "Base name used for all VPC resources"
 }
 
-variable "tags" {
-  type        = map(string)
-  default     = {}
-  description = "Additional tags applied to all resources"
-}
 # VPC Flow Logs Variables
 variable "enable_flow_logs" {
   type        = bool

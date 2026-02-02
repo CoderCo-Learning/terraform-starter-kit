@@ -24,9 +24,4 @@ module "vpc" {
 
   enable_nat_gateway = false # Enables outbound internet access for private subnets
   enable_flow_logs   = false
-
-  tags = {
-    Environment = "dev"
-    Owner       = "coderco"
-  }
 }
