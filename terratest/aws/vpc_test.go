@@ -1,4 +1,4 @@
-package aws
+package test
 
 import (
 	"testing"
@@ -11,7 +11,7 @@ func TestVpcBasicExample(t *testing.T) {
 	t.Parallel()
 
 	opts := &terraform.Options{
-		TerraformDir: "../../examples/aws/vpc",
+		TerraformDir: "../../examples/aws/vpc/basic",
 	}
 
 	defer terraform.Destroy(t, opts)

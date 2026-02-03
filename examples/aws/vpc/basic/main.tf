@@ -12,7 +12,7 @@ provider "aws" {
   region = "eu-west-2"
 }
 module "vpc" {
-  source              = "../../../modules/aws/vpc"
+  source              = "../../../../modules/aws/vpc"
   name                = "example-vpc"
   vpc_cidr_block      = "10.0.0.0/16"
   azs                 = ["eu-west-2a", "eu-west-2b"]
@@ -24,9 +24,4 @@ module "vpc" {
 
   enable_nat_gateway = false # Enables outbound internet access for private subnets
   enable_flow_logs   = false
-
-  tags = {
-    Environment = "dev"
-    Owner       = "coderco"
-  }
 }
