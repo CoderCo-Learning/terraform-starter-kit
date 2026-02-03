@@ -75,15 +75,26 @@ modules/aws/<module-name>/
         ├── main.tf
         └── README.md
 ```
-## Contributing
+## Maintainers & Contributors
 
-Contributions are welcome and encouraged.
+This repository is maintained by the CoderCo community MOT team.
 
-This repository is currently maintained by
+**Current maintainers:**
 
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" /> [JunedConnect](https://github.com/JunedConnect)
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" /> [munaai](https://github.com/munaai)
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" /> [zyusuf88](https://github.com/zyusuf88)
+<p align="left">
+  <a href="https://github.com/JunedConnect">
+    <img src="https://github.com/JunedConnect.png" width="50" height="50" alt="JunedConnect" />
+  </a>
+  <a href="https://github.com/munaai">
+    <img src="https://github.com/munaai.png" width="50" height="50" alt="munaai" />
+  </a>
+  <a href="https://github.com/zyusuf88">
+    <img src="https://github.com/zyusuf88.png" width="50" height="50" alt="zyusuf88" />
+  </a>
+</p>
+
+We welcome contributions from the wider community, whether that’s improving existing modules, adding examples, or fixing issues.
+
 
 ### Before You Start
 
