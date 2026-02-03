@@ -1,5 +1,11 @@
 # CoderCo Terraform Starter Kits
 
+![CoderCo Standards](https://img.shields.io/badge/CoderCo-Engineering%20Standards-purple)
+![Terraform](https://img.shields.io/badge/Terraform-supported-623CE4?logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazonaws&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+
 **Production-Ready Terraform Modules for AWS**
 
 ---
@@ -28,10 +34,9 @@ This repository follows **CoderCo Engineering Standards** and is intended for bo
 
 ### AWS Modules
 
-- **VPC** – Networking foundations (subnets, routing, gateways)
-- **EC2** – Compute resources with security-first defaults
-- **ECS** – Container orchestration for scalable workloads
-- **S3** – Secure S3 buckets with optional versioning and encryption
+- **[VPC](modules/aws/vpc)** – Networking foundations (subnets, routing, gateways)
+- **[EC2](modules/aws/ec2)** – Compute resources with security-first defaults
+- **[ECS](modules/aws/ecs)** – Container orchestration for scalable workloads
 
 Each module includes:
 - Clear inputs and outputs
@@ -74,6 +79,7 @@ modules/aws/<module-name>/
 ## Contributing
 
 Contributions are welcome and encouraged.
+This repository is currently maintained by @JunedConnect @munaai @zyusuf88 
 
 ### Before You Start
 
@@ -85,7 +91,7 @@ Contributions are welcome and encouraged.
 
 All contributions must align with:
 
-- [Terraform Standards](https://github.com/CoderCo-Learning/terraform-starter-kit/blob/dev/contribute/terraform-standards.md) – Coding and design principles
+- [Terraform Standards](contribute/terraform-standards.md) – Coding and design principles
 - [Pull Requests](https://github.com/CoderCo-Learning/terraform-starter-kit/pulls) – Pull request expectations and checks
 
 ---
