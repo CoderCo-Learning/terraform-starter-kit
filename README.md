@@ -79,9 +79,9 @@ modules/aws/<module-name>/
 
 Contributions are welcome and encouraged.
 This repository is currently maintained by:
-- [JunedConnect](https://github.com/JunedConnect)
-- [munaai](https://github.com/munaai)
-- [zyusuf88](https://github.com/zyusuf88)
+[JunedConnect](https://github.com/JunedConnect)
+[munaai](https://github.com/munaai)
+[zyusuf88](https://github.com/zyusuf88)
 
 ### Before You Start
 
