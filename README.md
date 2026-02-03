@@ -116,3 +116,7 @@ All contributions must align with:
 - Have an improvement idea?
 
 Open an **Issue** or submit a **Pull Request** — just don’t freestyle, we have standards for a reason 
+
+## License
+
+This project is licensed under the MIT License.
