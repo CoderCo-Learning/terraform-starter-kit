@@ -1,5 +1,4 @@
 # CoderCo Terraform Starter Kits
-
 ![CoderCo Standards](https://img.shields.io/badge/CoderCo-Engineering%20Standards-purple)
 ![Terraform](https://img.shields.io/badge/Terraform-supported-623CE4?logo=terraform&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazonaws&logoColor=white)
@@ -7,6 +6,7 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 **Production-Ready Terraform Modules for AWS**
+
 ---
 
 ## Overview
