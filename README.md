@@ -78,10 +78,10 @@ modules/aws/<module-name>/
 ## Contributing
 
 Contributions are welcome and encouraged.
-This repository is currently maintained by:
-[JunedConnect](https://github.com/JunedConnect)
-[munaai](https://github.com/munaai)
-[zyusuf88](https://github.com/zyusuf88)
+This repository is currently maintained by
+[JunedConnect](https://github.com/JunedConnect),
+[munaai](https://github.com/munaai),
+and [zyusuf88](https://github.com/zyusuf88).
 
 ### Before You Start
 
