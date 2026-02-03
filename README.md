@@ -1,5 +1,4 @@
 # CoderCo Terraform Starter Kits
-**Production-Ready Terraform Modules for AWS**
 
 ![CoderCo Standards](https://img.shields.io/badge/CoderCo-Engineering%20Standards-purple)
 ![Terraform](https://img.shields.io/badge/Terraform-supported-623CE4?logo=terraform&logoColor=white)
@@ -7,7 +6,7 @@
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
-
+**Production-Ready Terraform Modules for AWS**
 ---
 
 ## Overview
@@ -79,7 +78,10 @@ modules/aws/<module-name>/
 ## Contributing
 
 Contributions are welcome and encouraged.
-This repository is currently maintained by @JunedConnect @munaai @zyusuf88 
+This repository is currently maintained by:
+- [JunedConnect](https://github.com/JunedConnect)
+- [munaai](https://github.com/munaai)
+- [zyusuf88](https://github.com/zyusuf88)
 
 ### Before You Start
 
