@@ -86,7 +86,7 @@ This repository is maintained by the CoderCo community MOT team.
     <img src="https://github.com/JunedConnect.png" width="50" height="50" alt="JunedConnect" />
   </a>
   <a href="https://github.com/munaai">
-    <img src="https://github.com/munaai.png" width="50" height="50" alt="munaai" />
+    <img src="https://github.com/munaai.png" style="border-radius:50%">
   </a>
   <a href="https://github.com/zyusuf88">
     <img src="https://github.com/zyusuf88.png" width="50" height="50" alt="zyusuf88" />
