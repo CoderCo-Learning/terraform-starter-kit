@@ -78,11 +78,15 @@ modules/aws/<module-name>/
 ## Contributing
 
 Contributions are welcome and encouraged.
-This repository is currently maintained by
-[JunedConnect](https://github.com/JunedConnect),
-[munaai](https://github.com/munaai),
-and [zyusuf88](https://github.com/zyusuf88).
 
+This repository is currently maintained by
+[![GitHub](https://img.shields.io/badge/GitHub-JunedConnect-black?logo=github)](https://github.com/JunedConnect)
+[![GitHub](https://img.shields.io/badge/GitHub-munaai-black?logo=github)](https://github.com/munaai)
+[![GitHub](https://img.shields.io/badge/GitHub-zyusuf88-black?logo=github)](https://github.com/zyusuf88)
+
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="18" /> [JunedConnect](https://github.com/JunedConnect)
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="18" /> [munaai](https://github.com/munaai)
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="18" /> [zyusuf88](https://github.com/zyusuf88)
 ### Before You Start
 
 - Refer to [Contributing to Terraform Starter Kits](https://github.com/CoderCo-Learning/terraform-starter-kit/blob/dev/contribute/README.md)
