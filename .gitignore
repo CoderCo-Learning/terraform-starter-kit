@@ -1,5 +1,7 @@
 .DS_Store
 .env
+*.tar.gz*
+
 
 # Local .terraform directories
 **/.terraform/*
@@ -29,8 +31,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore lock files (uncomment if you want to commit them)
-# .terraform.lock.hcl
+# Ignore lock files
+.terraform.lock.hcl
 
 # IDE files
 .vscode/
@@ -41,3 +43,6 @@ terraform.rc
 
 # OS files
 Thumbs.db
+
+# terraform lock
+.terraform.lock.hcl
