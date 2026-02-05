@@ -33,9 +33,9 @@ This repository follows **CoderCo Engineering Standards** and is intended for bo
 
 ### AWS Modules
 
-- **[VPC](modules/aws/vpc)** – Networking foundations (subnets, routing, gateways)
-- **[EC2](modules/aws/ec2)** – Compute resources with security-first defaults
-- **[ECS](modules/aws/ecs)** – Container orchestration for scalable workloads
+- **[VPC](modules/aws/vpc)** - Networking foundations (subnets, routing, gateways)
+- **[EC2](modules/aws/ec2)** - Compute resources with security-first defaults
+- **[ECS](modules/aws/ecs)** - Container orchestration for scalable workloads
 
 Each module includes:
 - Clear inputs and outputs
@@ -105,8 +105,8 @@ We welcome contributions from the wider community, whether that’s improving ex
 
 All contributions must align with:
 
-- [Terraform Standards](contribute/terraform-standards.md) – Coding and design principles
-- [Pull Requests](https://github.com/CoderCo-Learning/terraform-starter-kit/pulls) – Pull request expectations and checks
+- [Terraform Standards](contribute/terraform-standards.md) - Coding and design principles
+- [Pull Requests](https://github.com/CoderCo-Learning/terraform-starter-kit/pulls) - Pull request expectations and checks
 
 ---
 
