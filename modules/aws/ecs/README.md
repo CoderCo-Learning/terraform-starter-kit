@@ -58,7 +58,8 @@ See [examples/](examples/) directory for complete examples.
 
 ## Notes
 
-- **Security groups are required** - You must provide at least one security group ID for the ECS service to function
+- **Fargate launch type only** - This module currently only supports the FARGATE launch type. EC2 launch type is not supported as of now.
+- **Security groups are required** - You must create and provide at least one security group ID for the ECS service. The module does not create security groups. Ensure your security groups allow the necessary inbound/outbound traffic for your service.
 - **Load balancer not included** – If you wish to use the load balancer feature, you must create the load balancer and target group yourself, and provide the target group to the module input.
 - All resources are automatically tagged with `ManagedBy` and `Module` tags via provider default_tags
 - The module creates IAM roles for task execution and task role. (task role will not be created if `use_custom_task_role` is set to `true` and `task_role_arn` is provided)
