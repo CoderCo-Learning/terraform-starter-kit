@@ -1,57 +1,70 @@
 # CoderCo Terraform Starter Kits
+![CoderCo Standards](https://img.shields.io/badge/CoderCo-Engineering%20Standards-purple)
+![Terraform](https://img.shields.io/badge/Terraform-supported-623CE4?logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazonaws&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
-> **Production-ready Terraform modules and examples for the CoderCo community**
+**Production-Ready Terraform Modules for AWS**
 
-This repository contains reusable Terraform modules, real-world examples, and starter templates following [CoderCo Engineering Standards](https://github.com/CoderCo-Learning/engineering-standards).
+---
 
-## What's Here
+## Overview
 
-- **Modules** - Reusable, tested Terraform modules
-- **Examples** - Complete working examples you can copy
-- **Templates** - Starter templates for common patterns
-- **Best Practices** - Best practices for Terraform code
+A curated collection of reusable, production-grade Terraform modules, real-world examples, and starter templates designed to accelerate AWS infrastructure builds while enforcing security, consistency, and best practices.
+
+This repository follows **CoderCo Engineering Standards** and is intended for both learning and real-world usage.
+
+---
+
+## Getting Started
+
+### How to Use These Modules
+
+1. Select the module you need
+2. Reference it in your Terraform configuration
+3. Configure via variables
+4. Test in dev or staging
+5. Deploy with confidence 
+
+---
+
+## Available Modules & Examples
+
+### AWS Modules
+
+- **[VPC](modules/aws/vpc)** - Networking foundations (subnets, routing, gateways)
+- **[EC2](modules/aws/ec2)** - Compute resources with security-first defaults
+- **[ECS](modules/aws/ecs)** - Container orchestration for scalable workloads
+
+Each module includes:
+- Clear inputs and outputs
+- Usage examples
+- Opinionated but flexible defaults
+- Documentation aligned with Terraform best practices
+
+---
 
 ## Quick Start
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/CoderCo-Learning/terraform-starter-kit.git
 cd terraform-starter-kit
 
 # Navigate to an example
-cd examples/aws-vpc-basic
+cd examples/aws/...
 
-# Initialize and apply
+# Initialise and plan
 terraform init
 terraform plan
-terraform apply
 ```
 
-## Available Modules
+## Repository Structure
 
-### AWS Modules
-- [**vpc**](./modules/aws/vpc) - VPC with public/private subnets
-- [**ec2-instance**](./modules/aws/ec2-instance) - EC2 instance with best practices
-- [**s3-bucket**](./modules/aws/s3-bucket) - S3 bucket with security defaults
-
-More modules coming soon!
-
-## Examples
-
-### Basic Examples
-- [**aws-vpc-basic**](./examples/aws-vpc-basic) - Simple VPC setup
-- [**ec2-web-server**](./examples/ec2-web-server) - Web server deployment
-- [**s3-static-site**](./examples/s3-static-site) - Static website hosting
-
-### Advanced Examples
-
-Coming soon as the team builds them!
-
-## Module Structure
-
-All modules follow this structure:
+All modules follow a consistent structure to ensure readability, scalability, and maintainability:
 ```
-modules/aws/vpc/
+modules/aws/<module-name>/
 ├── README.md           # Module documentation
 ├── main.tf             # Resource definitions
 ├── variables.tf        # Input variables
@@ -62,78 +75,48 @@ modules/aws/vpc/
         ├── main.tf
         └── README.md
 ```
+## Maintainers & Contributors
 
-## Contributing
+This repository is maintained by the CoderCo community MOT team.
 
-This is a **MOT team project**! 
+**Current maintainers:**
 
-### Your First Contribution
+<p align="left">
+  <a href="https://github.com/JunedConnect">
+    <img src="https://github.com/JunedConnect.png" width="50" height="50" alt="JunedConnect" />
+  </a>
+  <a href="https://github.com/munaai">
+    <img src="https://github.com/munaai.png" width="50" height="50" alt="munaai" />
+  </a>
+  <a href="https://github.com/zyusuf88">
+    <img src="https://github.com/zyusuf88.png" width="50" height="50" alt="zyusuf88" />
+  </a>
+</p>
 
-1. Check the [issues](../../issues) for `good-first-issue` label
-2. Read our [Terraform Standards](https://github.com/YourUsername/coderco-engineering-standards/blob/main/docs/terraform-standards.md)
-3. Submit a small PR (docs, example, or simple module improvement)
+We welcome contributions from the wider community, whether that’s improving existing modules, adding examples, or fixing issues.
 
-### What We Need
+### Before You Start
 
-- New modules for common patterns
-- More examples and use cases
-- Better documentation
-- Tests for existing modules
-- Bug fixes and improvements
+- Refer to [Contributing to Terraform Starter Kits](https://github.com/CoderCo-Learning/terraform-starter-kit/blob/dev/contribute/README.md)
+- Follow branching, naming, and pull request rules
+- Start with documentation, examples, or small improvements if you are new
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+### Standards
 
-## Standards
+All contributions must align with:
 
-All code in this repo follows:
-- [CoderCo Terraform Standards](https://github.com/CoderCo-Learning/engineering-standards/blob/main/terraform-standards.md)
-- [CoderCo Kubernetes Standards](https://github.com/CoderCo-Learning/engineering-standards/blob/main/k8s-standards.md)
-
-## Using These Modules
-
-### In Your Own Projects
-```hcl
-module "vpc" {
-  source = "github.com/CoderCo/terraform-starter-kits//modules/aws/vpc?ref=v1.0.0"
-  
-  vpc_cidr    = "10.0.0.0/16"
-  environment = "prod"
-  project     = "my-app"
-}
-```
-
-### Local Development
-
-```hcl
-module "vpc" {
-  source = "../../modules/aws/vpc"
-  
-  vpc_cidr    = "10.0.0.0/16"
-  environment = "dev"
-  project     = "my-app"
-}
-```
-
-## Important Notes
-
-- Always pin module versions in production
-- Review module code before using
-- Test in dev/staging first
-- Follow security best practices
-- Never commit secrets or credentials
-
-## Learning Resources
-
-- [Terraform Documentation](https://www.terraform.io/docs)
-- [AWS Provider Docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-- [CoderCo Terraform Standards](https://github.com/CoderCo-Learning/engineering-standards/blob/main/terraform-standards.md)
-
-## 💬 Support
-
-- **Issues**: [GitHub Issues](../../issues)
-- **Discussions**: [GitHub Discussions](../../discussions)
-- **MOT Team**: Ask in your pod or main chat
+- [Terraform Standards](contribute/terraform-standards.md) - Coding and design principles
+- [Pull Requests](https://github.com/CoderCo-Learning/terraform-starter-kit/pulls) - Pull request expectations and checks
 
 ---
 
-Built with ❤️ by the CoderCo community
+## Support & Feedback
+
+- Found a bug?
+- Have an improvement idea?
+
+Open an **Issue** or submit a **Pull Request** — just don’t freestyle, we have standards for a reason 
+
+## License
+
+This project is licensed under the MIT License.
