@@ -6,9 +6,15 @@ This example creates a complete, minimal EKS environment for automated testing w
 
 This example is specifically designed for automated testing and creates all required infrastructure from scratch without using any modules except the EKS module being tested.
 
+## File Structure
+
+- **main.tf** - Terraform/provider configuration and EKS module declaration
+- **non-module.tf** - All non-module resources (VPC, subnets, internet gateway, NAT gateway, route tables)
+- **outputs.tf** - Output values for terratest validation
+
 ## What Gets Created
 
-**VPC Resources (raw resources, no module):**
+**VPC Resources:**
 - 1 VPC (`10.0.0.0/16`)
 - 2 Public subnets (`10.0.1.0/24`, `10.0.2.0/24`) across 2 AZs
 - 2 Private subnets (`10.0.10.0/24`, `10.0.11.0/24`) across 2 AZs
