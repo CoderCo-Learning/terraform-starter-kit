@@ -33,7 +33,7 @@ module "ecs" {
   task_family_name    = "my-task-family" # Defaults to "task-family"
 
   environment_variables = {
-    test       = "test"
+    test = "test"
   }
 
   # Load balancer configuration (optional)
