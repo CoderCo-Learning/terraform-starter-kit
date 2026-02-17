@@ -75,13 +75,6 @@ resource "aws_security_group" "this" {
   vpc_id = aws_vpc.test.id
 
   ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -106,7 +99,7 @@ resource "aws_security_group" "this" {
 
 resource "aws_lb_target_group" "this" {
   name        = "my-target-group"
-  port        = 8080
+  port        = 80
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = aws_vpc.test.id

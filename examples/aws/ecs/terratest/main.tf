@@ -22,9 +22,9 @@ module "ecs" {
   assign_public_ip    = true
   security_groups     = [aws_security_group.this.id]
   subnets             = aws_subnet.public[*].id
-  container_image_url = "677276074604.dkr.ecr.eu-west-2.amazonaws.com/weather-app"
-  container_port      = 8080
-  host_port           = 8080
+  container_image_url = "nginx:latest"
+  container_port      = 80
+  host_port           = 80
 
   # Optional variables
   service_name        = "my-ecs-service" # Defaults to "service"
@@ -33,8 +33,7 @@ module "ecs" {
   task_family_name    = "my-task-family" # Defaults to "task-family"
 
   environment_variables = {
-    ENV       = "production"
-    LOG_LEVEL = "info"
+    test       = "test"
   }
 
   # Load balancer configuration (optional)

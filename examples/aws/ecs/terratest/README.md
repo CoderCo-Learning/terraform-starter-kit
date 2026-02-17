@@ -19,23 +19,23 @@ This example is specifically designed for automated testing and creates all requ
 - 2 Public subnets (`10.0.1.0/24`, `10.0.2.0/24`) across 2 AZs
 - Internet Gateway
 - Public route table with routes
-- Security group with ingress rules for ports 80, 443, and 8080
+- Security group with ingress rules for ports 80 and 443
 - All egress traffic allowed
 
 **Load Balancer Resources:**
 - Application Load Balancer (public-facing)
-- Target Group (configured for port 8080, IP target type)
+- Target Group (configured for port 80, IP target type)
 - ALB Listener (port 80, forwards to target group)
 
 **ECS Resources:**
 - ECS cluster
 - ECS service with 2 tasks
 - Task definition (256 CPU, 512 memory)
-- Container using weather-app image from ECR
+- Container using nginx:latest image from Docker Hub
 - IAM roles for cluster and tasks
 - All required IAM policy attachments
 - Load balancer integration enabled
-- Container port mapping: 8080
+- Container port mapping: 80
 
 ## Usage
 
@@ -69,7 +69,8 @@ terraform destroy
 
 - Creates its own VPC and networking infrastructure
 - Public-facing load balancer for easy testing
-- Container image points to a pre-existing ECR image
+- Uses nginx:latest Docker image (no ECR required)
+- All ports pre-configured for nginx on port 80
 - Tasks deployed with public IP assignment
 - All resources created directly (no VPC/networking module dependency)
 - Designed for automated testing with terratest
