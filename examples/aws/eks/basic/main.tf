@@ -18,11 +18,11 @@ module "eks" {
   # source = "git::https://github.com/CoderCo-Learning/terraform-starter-kit//modules/aws/eks"
 
   # Required variables
-  name                = "my-eks-cluster"
-  cluster_version     = "1.34"
-  cluster_subnet_ids  = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"] # Replace with your subnet IDs
+  name                  = "my-eks-cluster"
+  cluster_version       = "1.34"
+  cluster_subnet_ids    = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"] # Replace with your subnet IDs
   node_group_subnet_ids = ["subnet-1234567890abcdef0", "subnet-0987654321fedcba0"] # Replace with your subnet IDs
-  
+
   # Optional variables
   node_group_name    = "my-node-group"          # Defaults to "node-group"
   desired_size       = 2                        # Defaults to 2
