@@ -1,19 +1,19 @@
 resource "aws_eks_node_group" "this" {
   cluster_name    = aws_eks_cluster.this.name
-  node_group_name = var.node-group-name
+  node_group_name = var.node_group_name
   node_role_arn   = aws_iam_role.eks-node-group-role.arn
-  subnet_ids      = var.node-group-subnet-ids
+  subnet_ids      = var.node_group_subnet_ids
 
   scaling_config {
-    desired_size = var.desired-size
-    max_size     = var.max-size
-    min_size     = var.min-size
+    desired_size = var.desired_size
+    max_size     = var.max_size
+    min_size     = var.min_size
   }
 
-  disk_size      = var.instance-disk-size
-  instance_types = var.instance-types
-  capacity_type  = var.capacity-type
-  ami_type       = var.ami-type
+  disk_size      = var.instance_disk_size
+  instance_types = var.instance_types
+  capacity_type  = var.capacity_type
+  ami_type       = var.ami_type
   labels         = var.labels
 
   dynamic "taint" {

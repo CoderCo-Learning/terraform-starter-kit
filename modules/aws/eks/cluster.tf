@@ -2,18 +2,18 @@ resource "aws_eks_cluster" "this" {
   name = var.name
 
   access_config {
-    authentication_mode                         = var.authentication-mode
-    bootstrap_cluster_creator_admin_permissions = var.bootstrap-cluster-creator-admin-permissions
+    authentication_mode                         = var.authentication_mode
+    bootstrap_cluster_creator_admin_permissions = var.bootstrap_cluster_creator_admin_permissions
   }
 
   role_arn = aws_iam_role.eks-cluster-role.arn
-  version  = var.cluster-version
+  version  = var.cluster_version
 
   vpc_config {
-    subnet_ids = var.cluster-subnet-ids
+    subnet_ids = var.cluster_subnet_ids
 
-    endpoint_private_access = var.endpoint-private-access
-    endpoint_public_access  = var.endpoint-public-access
+    endpoint_private_access = var.endpoint_private_access
+    endpoint_public_access  = var.endpoint_public_access
 
   }
 

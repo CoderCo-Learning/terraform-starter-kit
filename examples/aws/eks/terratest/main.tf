@@ -16,11 +16,11 @@ provider "aws" {
 module "eks" {
   source = "../../../../modules/aws/eks"
 
-  name                    = "test-eks-cluster"
-  cluster-version         = "1.34"
-  cluster-subnet-ids      = concat(aws_subnet.public[*].id, aws_subnet.private[*].id)
-  node-group-subnet-ids   = aws_subnet.private[*].id
-  endpoint-private-access = true
-  endpoint-public-access  = true
+  name                  = "test-eks-cluster"
+  cluster_version       = "1.34"
+  cluster_subnet_ids    = concat(aws_subnet.public[*].id, aws_subnet.private[*].id)
+  node_group_subnet_ids = aws_subnet.private[*].id
+  endpoint_private_access = true
+  endpoint_public_access  = true
 
 }
