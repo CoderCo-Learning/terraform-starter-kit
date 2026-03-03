@@ -36,6 +36,7 @@ This repository follows **CoderCo Engineering Standards** and is intended for bo
 - **[VPC](modules/aws/vpc)** - Networking foundations (subnets, routing, gateways)
 - **[EC2](modules/aws/ec2)** - Compute resources with security-first defaults
 - **[ECS](modules/aws/ecs)** - Container orchestration for scalable workloads
+- **[EKS](modules/aws/eks)** - Kubernetes cluster with managed node groups
 
 Each module includes:
 - Clear inputs and outputs
